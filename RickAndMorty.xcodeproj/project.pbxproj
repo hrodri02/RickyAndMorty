@@ -24,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0608FA2723CF7F1400427AAC /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		061815E023C6260A009402D2 /* ImageRetrieverService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRetrieverService.swift; sourceTree = "<group>"; };
 		0618355A23C644BA00647612 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		0618355C23C6454600647612 /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
@@ -113,6 +114,7 @@
 				069415F523C5226400FB10F4 /* Assets.xcassets */,
 				069415F723C5226400FB10F4 /* LaunchScreen.storyboard */,
 				069415FA23C5226400FB10F4 /* Info.plist */,
+				0608FA2723CF7F1400427AAC /* MyPlayground.playground */,
 			);
 			path = RickAndMorty;
 			sourceTree = "<group>";
