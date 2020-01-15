@@ -10,10 +10,10 @@ import Foundation
 
 struct Network {
     static func loadJSONData<T: Codable, M: Codable>(from urlStr: String,
-                                         type: T.Type,
-                                         metaDataType: M.Type,
-                                         queue: DispatchQueue = DispatchQueue.main,
-                                         completionHandler: @escaping (T?, M?, NetworkError?) -> Void)
+                                                     type: T.Type,
+                                                     metaDataType: M.Type,
+                                                     queue: DispatchQueue = DispatchQueue.main,
+                                                     completionHandler: @escaping (T?, M?, NetworkError?) -> Void)
     {
         guard let url = URL(string: urlStr) else {
             completionHandler(nil, nil, .invalidPath)
