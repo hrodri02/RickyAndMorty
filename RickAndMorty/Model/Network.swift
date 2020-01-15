@@ -38,7 +38,7 @@ struct Network {
                         let value = try decoder.singleValueContainer().decode(String.self)
                         
                         let formatter = DateFormatter()
-                        formatter.dateFormat = "yyyy-MM-dd"
+                        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
                         
                         if let date = formatter.date(from: value) {
                             return date
