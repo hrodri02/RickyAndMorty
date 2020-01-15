@@ -77,6 +77,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		062EA85C23CEC33B001BF7EA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				061815E023C6260A009402D2 /* ImageRetrieverService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		069415E223C5226200FB10F4 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +104,7 @@
 		069415ED23C5226200FB10F4 /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
+				062EA85C23CEC33B001BF7EA /* Services */,
 				062EA85523CEB111001BF7EA /* Extensions */,
 				0694160023C5238F00FB10F4 /* Model */,
 				062EA85423CEAA40001BF7EA /* Controller */,
@@ -116,7 +125,6 @@
 				0694160523C52F7900FB10F4 /* WebServices.swift */,
 				0694160723C5307700FB10F4 /* RickAndMortyCharacter.swift */,
 				065FDE2623C560380032BDF3 /* RickAndMortyCharacters.swift */,
-				061815E023C6260A009402D2 /* ImageRetrieverService.swift */,
 				0618355A23C644BA00647612 /* Info.swift */,
 				0618355C23C6454600647612 /* Metadata.swift */,
 			);
