@@ -11,4 +11,5 @@ import Foundation
 struct RickAndMortyCharacter: Codable {
     var name: String
     var image: String
+    var created: Date
 }
