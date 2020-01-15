@@ -13,15 +13,16 @@ class ViewController: UIViewController {
     var characters = [RickAndMortyCharacter]() {
         didSet {
             if isViewLoaded {
-                self.tableView.reloadData()
+                tableView.reloadData()
             }
         }
     }
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
+        tableView.register(CharacterTVCell.self, forCellReuseIdentifier: "cellId")
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -71,19 +72,27 @@ extension ViewController: UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
-        let row = indexPath.row
-        cell.textLabel?.text = characters[row].name
-        let imageName = characters[row].image
-        ImageRetrieverService.shared.downloadImage(from: imageName) { (image) in
-            cell.imageView?.image = image
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! CharacterTVCell
+        let character = characters[indexPath.row]
+        
+        cell.nameLabel.text = character.name
+        cell.dateLabel.text = character.created.getDateAsString(format: "MMM d, h:mm a")
+        
+        ImageRetrieverService.shared.downloadImage(from: character.image) { (image) in
+            cell.characterImageView.image = image
             cell.setNeedsLayout()
         }
         
-        if row == characters.count - 1 {
+        if indexPath.row == characters.count - 1 {
             loadMoreItems()
         }
         
         return cell
+    }
+}
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50.0
     }
 }
