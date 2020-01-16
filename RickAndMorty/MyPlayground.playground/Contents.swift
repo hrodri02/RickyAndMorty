@@ -1,5 +1,17 @@
 import UIKit
 
+DispatchQueue.global(qos: .background).sync {
+    for i in 0 ... 5 {
+        print("(background) \(i)")
+    }
+}
+
+DispatchQueue.global(qos: .userInteractive).async {
+    for i in 0 ... 5 {
+        print("(ui) \(i)")
+    }
+}
+
 let celcius = [-5.0, 10.0, 21.0, 33.0, 50.0]
 var fahrenheit: [Double] = celcius.map { $0 * (9.0 / 5.0) + 32 }
 print(celcius)
